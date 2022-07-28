@@ -1,5 +1,6 @@
 from flask import Flask,request
 from flask_sqlalchemy import SQLAlchemy
+import json
 
 app = Flask(__name__)
 #google_cloud_stuff
@@ -25,5 +26,13 @@ def home_view():
         return "hello"
 @app.route('/sensor/data',methods=['GET','POST'])
 def posting():
+    def validateJSON(jsonData):
+        try:
+            json.loads(jsonData)
+        except ValueError as err:
+            print("False")
+        print("True")
     content=request.get_json()
-    return content
+    print(content)
+    print(validateJSON(content))
+    return 'json posted'
