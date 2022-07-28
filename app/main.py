@@ -35,4 +35,4 @@ def posting():
     content=request.get_json()
     print(content)
     print(validateJSON(content))
-    return 'json posted'
+    return type(content)
