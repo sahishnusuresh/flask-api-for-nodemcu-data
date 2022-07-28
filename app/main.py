@@ -26,6 +26,4 @@ def home_view():
 @app.route('/sensor/data',methods=['GET','POST'])
 def posting():
     content=request.get_data()
-    print(content)
-    print(type(content))
-    return 'json posted'
+    return content
