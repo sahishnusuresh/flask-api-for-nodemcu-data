@@ -28,7 +28,7 @@ def home_view():
 def posting():
     def validateJSON(jsonData):
         try:
-            json.loads(jsonData)
+            json.loads(json.dumps(jsonData))
         except ValueError as err:
             print("False")
         print("True")
