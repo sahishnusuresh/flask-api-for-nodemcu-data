@@ -15,4 +15,4 @@ def home_view():
 def posting():
     content=request.get_json()
     print(content)
-    return content
+    return 'json posted'
