@@ -25,5 +25,5 @@ def home_view():
         return "hello"
 @app.route('/sensor/data',methods=['GET','POST'])
 def posting():
-    content=request.get_data()
+    content=request.get_json()
     return content
