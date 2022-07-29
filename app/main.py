@@ -35,6 +35,6 @@ def posting():
     # content=request.get_json()
     # print(content)
     # print(validateJSON(content))
-    content=jsonify(request.json)
+    content=request.get_json()
     print(content)
     return 'json posted'
