@@ -36,5 +36,5 @@ def posting():
     # print(content)
     # print(validateJSON(content))
     content=request.get_json()
-    print(content)
+    print(content['device_id'])
     return 'json posted'
