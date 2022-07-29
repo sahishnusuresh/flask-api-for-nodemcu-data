@@ -9,18 +9,18 @@ PUBLIC_IP_ADDRESS ="35.222.14.19"
 DBNAME ="sensor_data"
 PROJECT_ID ="AQ-CLOUD"
 INSTANCE_NAME ="flask-esp"
-app.config["SECRET_KEY"] = "yoursecretkey"
-app.config["SQLALCHEMY_DATABASE_URI"]= f"mysql + mysqldb://root:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}?unix_socket =/cloudsql/{PROJECT_ID}:{INSTANCE_NAME}"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= True
+# app.config["SECRET_KEY"] = "yoursecretkey"
+# app.config["SQLALCHEMY_DATABASE_URI"]= f"mysql + mysqldb://root:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}?unix_socket =/cloudsql/{PROJECT_ID}:{INSTANCE_NAME}"
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= True
  
 db = SQLAlchemy(app)
  
 
-class Sensors(db.Model):
-    sensor_id=db.Column(db.String(50), nullable=False)
-    pm10=db.Column(db.Integer, nullable=False)
-    pm75=db.Column(db.Integer, nullable=False)
-    pm25=db.Column(db.Integer,nullable=False)
+# class Sensors(db.Model):
+#     sensor_id=db.Column(db.String(50), nullable=False)
+#     pm10=db.Column(db.Integer, nullable=False)
+#     pm75=db.Column(db.Integer, nullable=False)
+#     pm25=db.Column(db.Integer,nullable=False)
  
 @app.route("/",methods=['GET'])
 def home_view():
