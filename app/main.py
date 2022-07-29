@@ -1,15 +1,16 @@
 from flask import Flask, jsonify,request,make_response
 from flask_sqlalchemy import SQLAlchemy
 import json
+import os
 
 app = Flask(__name__)
 #google_cloud_stuff
 PASSWORD ="sahi666"
 PUBLIC_IP_ADDRESS ="35.222.14.19"
 DBNAME ="sensor_data"
-PROJECT_ID ="AQ-CLOUD"
+PROJECT_ID ="aq-cloud"
 INSTANCE_NAME ="flask-esp"
-app.config["SECRET_KEY"] = "yoursecretkey"
+app.config["SECRET_KEY"] = os.urandom(256)
 app.config["SQLALCHEMY_DATABASE_URI"]= f"mysql + mysqldb://root:{PASSWORD}@{PUBLIC_IP_ADDRESS}/{DBNAME}?unix_socket =/cloudsql/{PROJECT_ID}:{INSTANCE_NAME}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= True
  
