@@ -37,5 +37,5 @@ def posting():
     # print(content)
     # print(validateJSON(content))
     content=request.get_json()
-    print(content['aq1'])
+    print(content['aq1']['pm10'])
     return 'json posted'
