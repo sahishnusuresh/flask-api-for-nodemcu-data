@@ -32,7 +32,7 @@ def posting():
         except ValueError as err:
             print("False")
         print("True")
-    content=request.get_json()
-    print(content)
-    print(validateJSON(content))
+    # content=request.get_json()
+    # print(content)
+    # print(validateJSON(content))
     return 'json posted'
