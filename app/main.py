@@ -35,4 +35,5 @@ def posting():
     # content=request.get_json()
     # print(content)
     # print(validateJSON(content))
-    return jsonify(request.json)
+    content=jsonify(request.json)
+    print(content['altitude'])
