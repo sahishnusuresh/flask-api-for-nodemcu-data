@@ -36,4 +36,5 @@ def posting():
     # print(content)
     # print(validateJSON(content))
     content=jsonify(request.json)
-    print(content['altitude'])
+    print(content)
+    return 'json posted'
