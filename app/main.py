@@ -17,6 +17,8 @@ db = SQLAlchemy(app)
  
 
 class Sensors(db.Model):
+    id = db.Column(db.Integer, primary_key = True, nullable = False)
+
     sensor_id=db.Column(db.String(50), nullable=False)
     aq1_pm10=db.Column(db.Integer, nullable=False)
     aq1_pm75=db.Column(db.Integer, nullable=False)
